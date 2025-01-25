@@ -1,0 +1,16 @@
+{
+    "products": [
+        {
+            "id": "2",
+            "name": "Mobile",
+            "company": "Dell",
+            "price": "12000"
+        },
+        {
+            "id": "2",
+            "name": "Mobile",
+            "company": "Dell",
+            "price": "12000"
+        }
+    ]
+}

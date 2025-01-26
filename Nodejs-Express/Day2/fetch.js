@@ -4,10 +4,7 @@ fetch("http://localhost:8080/products",{
     headers:{"content-type": "application/json"},
 })
 
-.then((data) => {
-    console.log("Res",data);
-})
-.catch(console.error);
+
 
 
 

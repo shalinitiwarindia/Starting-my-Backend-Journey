@@ -10,5 +10,4 @@ fetch("http://localhost:8080/products",{
 .catch(console.error);
 
 
-// const http = require("http");
-// const data = http.request("url", {});
+

@@ -1,0 +1,7 @@
+//Command for running in vs code
+
+node index.js create test.txt
+node index.js read test.txt
+node index.js append "Hello World" test.txt
+node index.js delete test.txt
+

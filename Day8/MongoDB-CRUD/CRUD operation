@@ -1,0 +1,16 @@
+use Users
+switched to db Users
+show dbs
+Users          48.00 KiB
+sample_mflix  115.90 MiB
+admin         348.00 KiB
+local           2.87 GiB
+use Users
+already on db Users
+db.createCollection("user collection")
+{ ok: 1 }
+show dbs
+Users          56.00 KiB
+sample_mflix  115.90 MiB
+admin         348.00 KiB
+local           2.87 GiB

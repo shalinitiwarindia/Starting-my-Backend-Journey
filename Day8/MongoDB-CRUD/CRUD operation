@@ -14,3 +14,38 @@ Users          56.00 KiB
 sample_mflix  115.90 MiB
 admin         348.00 KiB
 local           2.87 GiB
+
+
+db.userCollection.insert( { item: "card", qty: 15 } )
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67aa0a12fe3c71ac9a847408')
+  }
+}
+db.userCollection.find( )
+{
+  _id: ObjectId('67aa0a12fe3c71ac9a847408'),
+  item: 'card',
+  qty: 15
+}
+db.userCollection.insertOne({name:"phone",qty:20 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('67aa0a9cfe3c71ac9a847409')
+}
+db.userCollection.find()
+{
+  _id: ObjectId('67aa0a12fe3c71ac9a847408'),
+  item: 'card',
+  qty: 15
+}
+{
+  _id: ObjectId('67aa0a9cfe3c71ac9a847409'),
+  name: 'phone',
+  qty: 20
+}
+
+
+

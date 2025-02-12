@@ -30,11 +30,7 @@ db.userCollection.find( )
   item: 'card',
   qty: 15
 }
-db.userCollection.insertOne({name:"phone",qty:20 })
-{
-  acknowledged: true,
-  insertedId: ObjectId('67aa0a9cfe3c71ac9a847409')
-}
+
 
   qty: 20
 }

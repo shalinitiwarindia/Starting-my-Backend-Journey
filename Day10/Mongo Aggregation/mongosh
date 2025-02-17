@@ -1,0 +1,48 @@
+
+//MongoDB aggregation query
+//group based on state+ city together, add sum of population in this group
+db.zips.aggregate([
+  { 
+    $group: { 
+      _id: { state: "$state", city: "$city" },  // Grouping by state + city
+      totalPop: { $sum: "$pop" }  // Summing population in this group
+    } 
+  }
+]);
+//group again based on state+ avg of previous pop
+db.zips.aggregate([
+  { 
+    $group: { 
+      _id: { state: "$state", city: "$city" },  
+      totalPop: { $sum: "$pop" }  // Sum population for each city
+    } 
+  },
+  { 
+    $group: { 
+      _id: "$_id.state",  // Group by state
+      avgCityPop: { $avg: "$totalPop" }  // Compute average city population per state
+    } 
+  }
+]);
+//how to find smallest and largest city per state
+
+db.zips.aggregate([
+  { 
+    $group: { 
+      _id: { state: "$state", city: "$city" }, 
+      totalPop: { $sum: "$pop" } 
+    } 
+  },
+  { 
+    $sort: { "totalPop": 1 }  // Sort cities by population in ascending order
+  },
+  { 
+    $group: { 
+      _id: "$_id.state", 
+      smallestCity: { $first: "$_id.city" }, // First city (smallest pop)
+      smallestCityPop: { $first: "$totalPop" },
+      largestCity: { $last: "$_id.city" },  // Last city (largest pop)
+      largestCityPop: { $last: "$totalPop" }
+    } 
+  }
+]);

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const connection = mongoose.connect("mongodb+srv://rajatind12:SHALINI1234@cluster0.kcjzx.mongodb.net/");
+const connection = mongoose.connect("write here mongodb path");
 
 const studentSchema = new mongoose.Schema({
     name: String,
